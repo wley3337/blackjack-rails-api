@@ -1,24 +1,11 @@
-# README
+# Blackjack Game
+This is a React using Hooks version for a blackjack game. 
+You can find the full list of Frontends and APIs [here.](https://github.com/wley3337/blackjack-game) 
+## Goal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* This will use multiple types for backend servers with the same user experience
 
-Things you may want to cover:
 
-* Ruby version
+## Frontends:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* React with hooks.  
