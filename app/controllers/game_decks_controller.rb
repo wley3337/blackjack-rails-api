@@ -1,0 +1,2 @@
+class GameDecksController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class DealerCard < ApplicationRecord
+end

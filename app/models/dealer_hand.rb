@@ -1,0 +1,2 @@
+class DealerHand < ApplicationRecord
+end

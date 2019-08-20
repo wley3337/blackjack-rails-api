@@ -1,0 +1,2 @@
+class DealerHandsController < ApplicationController
+end
