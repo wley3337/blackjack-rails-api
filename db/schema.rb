@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "password_digest"
     t.integer "bank"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
