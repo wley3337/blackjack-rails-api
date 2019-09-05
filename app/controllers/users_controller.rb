@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         if user && user.authenticate(password)
             # generates token returns user
             @current_user = user
-            render json: {success: true, token: generate_token(user), userObj: user}
+            render json: {success: true, token: generate_token(user), user: user.to_json(only:[:first_name, :last_name, :username, :bank])}
         else 
             # returns false for frontend response
             render json: {success: false}

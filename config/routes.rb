@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/login', to: "users#log_in"
   resources :user_cards
   resources :dealer_cards
   resources :card_decks
