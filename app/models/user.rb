@@ -10,4 +10,8 @@ class User < ApplicationRecord
     #     t.datetime "created_at", precision: 6, null: false
     #     t.datetime "updated_at", precision: 6, null: false
     #   end
+
+    def serialize_user
+        {firstName: self.first_name, lastName: self.last_name, bank: self.bank, username: self.username}
+    end 
 end
