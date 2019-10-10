@@ -11,11 +11,13 @@ class UsersController < ApplicationController
             password: create_user_params[:password]
             )
         user.bank = 1000
-        user.save
-        #generate token
-        token =  generate_token(user)
-
-        render json: {succes: true, user: user.serialize_user , token: token}
+        if user.save
+            #generate token
+            token =  generate_token(user)
+            render json: {success: true, user: user.serialize_user , token: token}
+        else 
+            render json: { success: false, errors: { messages: user.errors.full_messages } }
+        end
     end 
     
     def log_in
