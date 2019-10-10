@@ -31,7 +31,7 @@ class UsersController < ApplicationController
             render json: {success: true, token: generate_token(user), user: user.serialize_user }
         else 
             # returns false for frontend response
-            render json: {success: false}
+            render json: {success: false, errors: { messages: ["Wrong username or password"]}}
         end 
     end
     
