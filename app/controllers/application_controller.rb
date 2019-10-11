@@ -16,6 +16,7 @@ class ApplicationController < ActionController::API
 
     # validates token and returns the current user
     def authenticate
+        
         #built in method w/JWT
         authenticate_or_request_with_http_token do |token|
             begin
@@ -28,6 +29,7 @@ class ApplicationController < ActionController::API
     end 
 
     def decode(token)
-        JWT.decode(token, ENV["SEC_KEY"], true, { algorithm: 'HS256' })
+        key_base = Rails.application.credentials.secret_key_base
+        JWT.decode(token, key_base, true, { algorithm: 'HS256' })
     end 
 end

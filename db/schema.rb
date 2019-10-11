@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
 
   create_table "dealer_cards", force: :cascade do |t|
     t.integer "dealer_hand_id"
-    t.integer "card_id"
+    t.integer "card_deck_id"
     t.integer "round_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
 
   create_table "dealer_hands", force: :cascade do |t|
     t.integer "dealer_id"
-    t.integer "game_id"
+    t.integer "round_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
 
   create_table "game_decks", force: :cascade do |t|
     t.integer "game_id"
-    t.integer "deck_id"
+    t.integer "card_deck_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,20 +68,20 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
   end
 
   create_table "rounds", force: :cascade do |t|
+    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_cards", force: :cascade do |t|
     t.integer "user_hand_id"
-    t.integer "card_id"
+    t.integer "card_deck_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_hands", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "game_id"
     t.integer "round_id"
     t.integer "bet"
     t.boolean "win"

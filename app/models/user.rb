@@ -15,4 +15,12 @@ class User < ApplicationRecord
     def serialize_user
         {firstName: self.first_name, lastName: self.last_name, bank: self.bank, username: self.username}
     end 
+
+    def wins_losses
+        self.user_hands.reduce({wins: 0, losses: 0, bets: []}) do  | results, hand|
+            hand.win ? results[:wins] += 1 : results[:losses] +=1
+            results[:bets] << hand.bet
+            results 
+        end
+    end 
 end
