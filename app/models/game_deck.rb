@@ -1,4 +1,4 @@
 class GameDeck < ApplicationRecord
     belongs_to :game 
-    belongs_to :deck 
+    belongs_to :card_deck 
 end
