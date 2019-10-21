@@ -18,4 +18,28 @@ class Game < ApplicationRecord
         self.create_shoe.each{ |card_id| self.card_decks << card_id}
     end 
 
+    def deal_round
+      
+        #deal player card 1 
+
+        #deal dealer card 1
+
+        #deal player card 2 
+
+        #deal dealer card 2
+    end 
+
+
+    def deal_card 
+        shoe = self.undelt_shoe
+        new_card = shoe.sample
+        new_card.delt = true 
+        new_card.save 
+
+    end 
+
+    def undelt_shoe 
+        GameDecks.where("WHERE game_id = ? AND delt = ?", self.id, false )
+    end 
+
 end
