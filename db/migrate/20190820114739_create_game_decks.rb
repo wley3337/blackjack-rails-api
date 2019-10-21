@@ -3,6 +3,7 @@ class CreateGameDecks < ActiveRecord::Migration[6.0]
     create_table :game_decks do |t|
       t.integer :game_id
       t.integer :card_deck_id
+      t.boolean :delt, default: false
       t.timestamps
     end
   end

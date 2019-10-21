@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
   create_table "dealer_hands", force: :cascade do |t|
     t.integer "dealer_id"
     t.integer "round_id"
+    t.boolean "shown"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_115509) do
   create_table "game_decks", force: :cascade do |t|
     t.integer "game_id"
     t.integer "card_deck_id"
+    t.boolean "delt", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

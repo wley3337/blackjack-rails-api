@@ -1,14 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  before(:context) do 
-    build(:card_deck)
+  before(:all) do 
+    suites = ["hearts", "spades", "clubs", "diamonds"]
+    ranks = (1..13)
+    num_of_decks = (1..8)
+
+    num_of_decks.each do |deck|
+        deck = Deck.create!
+        suites.each do |suite|
+            ranks.each do |rank|
+                card = Card.create!(suite: suite, rank: rank)
+                deck.cards << card 
+            end 
+        end
+    end 
   end
 
-  after(:context) do 
+  after(:all) do 
     Card.destroy_all
     Deck.destroy_all
+    CardDeck.destroy_all
   end 
+
   context "#create_shoe" do 
     it "returns a non-repeating sample from all current cards" do
         new_game = build(:game)

@@ -28,21 +28,6 @@ FactoryBot.define do
     end 
 
 
-  
-    factory :card_deck do 
-        suites = ["hearts", "spades", "clubs", "diamonds"]
-        ranks = (1..13)
-        decks = (1..8)
-
-        decks.each do |deck|
-            deck = Deck.create!
-            suites.each do |suite|
-                ranks.each do |rank|
-                    card = Card.create!(suite: suite, rank: rank)
-                    deck.cards << card 
-                end 
-            end
-        end 
-    end 
+ 
 
   end
