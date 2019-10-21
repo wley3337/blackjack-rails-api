@@ -35,11 +35,10 @@ class Game < ApplicationRecord
         new_card = shoe.sample
         new_card.delt = true 
         new_card.save 
-
     end 
 
     def undelt_shoe 
-        GameDecks.where("WHERE game_id = ? AND delt = ?", self.id, false )
+        GameDeck.where("game_id = ? AND delt = ?", self.id, false )
     end 
 
 end

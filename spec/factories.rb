@@ -12,12 +12,10 @@ FactoryBot.define do
     end 
 
     factory :game do 
-
     end 
 
     factory :round do 
         game 
-
     end 
 
     factory :user_hand do 
@@ -27,6 +25,25 @@ FactoryBot.define do
         win {false}
     end 
 
+
+    factory :card do 
+        suite {"heart"}
+        rank {2}
+    end 
+
+    factory :deck do
+    end 
+
+    factory :card_deck do 
+        card 
+        deck 
+    end 
+
+    # factory :game_deck do 
+    #     card_deck
+    #     game
+    #     delt {false} 
+    # end 
 
  
 
